@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Nexa Business Studio — creative digital solutions for ambitious businesses.">
+<meta name="theme-color" content="#101b2b">
+<title>Nexa Business Studio | Make Your Next Move</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="topline"><span>CREATIVE THINKING. SMARTER DIGITAL WORK.</span><a href="#contact">LET'S TALK <b>↗</b></a></div>
+<header class="header">
+  <a class="logo" href="#"><span class="logo-icon">N</span><span>NEXA<span class="logo-light">STUDIO</span></span></a>
+  <button class="menu" id="menu" aria-label="Toggle menu">☰</button>
+  <nav id="nav"><a href="#services">Services</a><a href="#work">Our work</a><a href="#about">About</a><a href="#contact" class="nav-button">Start a project <b>↗</b></a></nav>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow"><i></i> YOUR IDEAS, OUR CREATIVE ENERGY</div>
+    <h1>Make your<br>next move<br><em>matter.</em></h1>
+    <p>We help businesses show up with confidence through thoughtful design, digital experiences and creative solutions.</p>
+    <div class="hero-buttons"><a class="btn btn-orange" href="#contact">Let's work together <b>↗</b></a><a class="under-link" href="#work">Discover our work <span>↓</span></a></div>
+    <div class="hero-note"><span class="note-line"></span> GOOD IDEAS DESERVE GREAT EXECUTION.</div>
+  </div>
+  <div class="hero-image-wrap">
+    <img class="hero-image" src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1300&q=85" alt="Bright modern creative studio workspace">
+    <div class="image-label"><span class="label-dot"></span><div><b>Ideas into impact</b><small>Creative work for modern brands</small></div><span class="label-arrow">↗</span></div>
+    <div class="hero-stamp">THINK<br>CREATE<br><b>GROW.</b></div>
+  </div>
+  <div class="hero-bottom"><span>BRANDING</span><span>·</span><span>WEB DESIGN</span><span>·</span><span>DIGITAL STRATEGY</span><span class="bottom-right">SCROLL TO EXPLORE ↓</span></div>
+</section>
+
+<section class="intro section">
+  <div class="eyebrow dark"><i></i> A CREATIVE PARTNER FOR YOUR NEXT CHAPTER</div>
+  <div class="intro-grid"><h2>We turn big<br>ambitions into<br><span>clear experiences.</span></h2><div class="intro-text"><p>Good business is built on trust. Your website, brand and digital presence should make that clear from the first impression.</p><p>Nexa brings strategy and creativity together to help your business communicate clearly and look its best.</p><a class="arrow-link" href="#about">A little about us <b>↗</b></a></div></div>
+</section>
+
+<section class="services section" id="services">
+ <div class="section-head"><div><div class="eyebrow"><i></i> WHAT WE CAN DO</div><h2>Services made<br>to move you <em>forward.</em></h2></div><p>Flexible creative support for businesses that want to make a stronger impression.</p></div>
+ <div class="service-grid">
+  <article class="service-card"><span class="service-no">01 / BRAND</span><div class="service-icon">✳</div><h3>Brand identity</h3><p>Build a recognisable look and a consistent voice that reflects what your business stands for.</p><a href="#contact">Explore service <b>↗</b></a></article>
+  <article class="service-card"><span class="service-no">02 / DIGITAL</span><div class="service-icon">⌘</div><h3>Website design</h3><p>Create a clear, polished online home that helps visitors understand what you offer.</p><a href="#contact">Explore service <b>↗</b></a></article>
+  <article class="service-card"><span class="service-no">03 / CONTENT</span><div class="service-icon">▧</div><h3>Creative content</h3><p>Present your products, services and ideas with engaging visuals and useful messaging.</p><a href="#contact">Explore service <b>↗</b></a></article>
+  <article class="service-card"><span class="service-no">04 / STRATEGY</span><div class="service-icon">↗</div><h3>Digital direction</h3><p>Bring focus to your online presence with a practical plan for your next steps.</p><a href="#contact">Explore service <b>↗</b></a></article>
+ </div>
+</section>
+
+<section class="work section" id="work">
+ <div class="section-head work-head"><div><div class="eyebrow dark"><i></i> A VISUAL LOOK AT OUR WORLD</div><h2>Ideas look better<br><span>in action.</span></h2></div><p>A few sample creative directions showing the kind of visual world your brand could build.</p></div>
+ <div class="work-grid">
+  <article class="work-item work-large"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85" alt="Creative team collaborating around a table"><div class="work-caption"><div><small>COLLABORATION / CONCEPT</small><h3>Better ideas, together.</h3></div><span>↗</span></div></article>
+  <article class="work-item"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85" alt="Contemporary office interior"><div class="work-caption"><div><small>WORKSPACE / INSPIRATION</small><h3>Space to create.</h3></div><span>↗</span></div></article>
+  <article class="work-item"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=85" alt="Business team planning a project"><div class="work-caption"><div><small>STRATEGY / PLANNING</small><h3>Make a clear plan.</h3></div><span>↗</span></div></article>
+ </div>
+ <p class="sample-note">Portfolio imagery is used as visual inspiration, not as a claim of completed client projects.</p>
+</section>
+
+<section class="about" id="about">
+ <div class="about-photo"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85" alt="Colleagues sharing ideas in a bright office"></div>
+ <div class="about-copy"><div class="eyebrow"><i></i> THE THINKING BEHIND NEXA</div><h2>Good work starts<br>with <em>good questions.</em></h2><p>Every business has a story worth telling. We believe the best creative work begins by listening, understanding the goal and keeping the solution simple.</p><p>Whether you're starting fresh or improving what you already have, let's make the next step a thoughtful one.</p><a class="btn btn-orange" href="#contact">Tell us your idea <b>↗</b></a></div>
+</section>
+
+<section class="contact section" id="contact">
+ <div class="contact-top"><div class="eyebrow dark"><i></i> HAVE SOMETHING IN MIND?</div><h2>Let's make<br><em>it happen.</em></h2></div>
+ <div class="contact-bottom"><p>Share a little about your business or the idea you're working on. Start a conversation and take the next step.</p><a class="contact-mail" href="mailto:hello@example.com">hello@example.com <span>↗</span></a><small>Replace this sample email address with your own before publishing.</small></div>
+</section>
+</main>
+<footer><a class="logo footer-logo" href="#"><span class="logo-icon">N</span><span>NEXA<span class="logo-light">STUDIO</span></span></a><span class="footer-tag">MAKE YOUR NEXT MOVE MATTER.</span><span class="copyright">© <span id="year"></span> Nexa Business Studio</span></footer>
+<script src="script.js"></script>
+</body>
+</html>
