@@ -1,623 +1,207 @@
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050b1c">
-
-<title>Waseem Brand | Personal Website</title>
-
-<meta name="description" content="Welcome to Waseem Brand. Explore my personal website, skills, services and projects.">
-
+<title>Mera World - AI Editing Services</title>
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#080d1b;
+ color:white;
+ text-align:center;
 }
-
-:root {
-  --bg: #050b1c;
-  --card: #0c1730;
-  --blue: #00b7ff;
-  --purple: #8b5cf6;
-  --white: #ffffff;
-  --gray: #b9c5dc;
+header{
+ padding:25px 15px;
+ background:linear-gradient(120deg,#101e49,#5424a0);
 }
-
-body {
-  font-family: Arial, sans-serif;
-  background: var(--bg);
-  color: var(--white);
-  line-height: 1.7;
+header h1{font-size:35px;margin:5px}
+header p{color:#ddd}
+nav{padding:15px;background:#111a30}
+nav a{color:white;text-decoration:none;margin:10px;font-size:14px}
+.hero{padding:55px 15px}
+.hero h2{font-size:30px;color:#43e5ff}
+.hero p{color:#ccc;line-height:1.8}
+.btn{
+ display:inline-block;
+ padding:12px 22px;
+ background:#13c8d8;
+ color:#06101b;
+ border-radius:25px;
+ text-decoration:none;
+ font-weight:bold;
+ margin-top:15px;
 }
-
-a {
-  text-decoration: none;
-  color: inherit;
+section{padding:30px 15px}
+h2{color:#43e5ff}
+.services{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:16px;
+ max-width:950px;
+ margin:auto;
 }
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(5,11,28,.95);
-  border-bottom: 1px solid #123c76;
-  backdrop-filter: blur(12px);
+.card{
+ background:#151e34;
+ padding:25px 15px;
+ border-radius:15px;
+ border:1px solid #283a61;
 }
-
-nav {
-  max-width: 1150px;
-  margin: auto;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
+.card .emoji{font-size:40px}
+.card h3{color:#43e5ff}
+.card p{color:#ccc;line-height:1.6}
+form{
+ max-width:450px;
+ margin:auto;
+ background:#151e34;
+ padding:22px;
+ border-radius:15px;
 }
-
-.logo {
-  font-size: 25px;
-  font-weight: bold;
-  color: var(--white);
+input,select,textarea{
+ width:100%;
+ padding:13px;
+ margin:9px 0;
+ border:1px solid #33476b;
+ border-radius:8px;
+ background:#080d1b;
+ color:white;
 }
-
-.logo span,
-.blue {
-  color: var(--blue);
+button{
+ padding:13px 25px;
+ border:0;
+ border-radius:25px;
+ background:#13c8d8;
+ font-weight:bold;
+ cursor:pointer;
 }
-
-.nav-links {
-  display: flex;
-  gap: 22px;
-  flex-wrap: wrap;
-}
-
-.nav-links a {
-  font-size: 14px;
-  color: var(--gray);
-  transition: .3s;
-}
-
-.nav-links a:hover {
-  color: var(--blue);
-}
-
-.hero {
-  max-width: 1150px;
-  margin: auto;
-  min-height: 580px;
-  padding: 100px 25px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 35px;
-}
-
-.hero-text {
-  flex: 1;
-}
-
-.hero h1 {
-  font-size: clamp(38px, 6vw, 68px);
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-
-.hero h1 span {
-  color: var(--blue);
-  text-shadow: 0 0 25px #0077ff55;
-}
-
-.hero p {
-  color: var(--gray);
-  font-size: 18px;
-  margin-bottom: 28px;
-  max-width: 550px;
-}
-
-.hero-image {
-  flex: 1;
-  min-height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.profile-placeholder {
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  border: 3px solid var(--blue);
-  background: linear-gradient(135deg, #102d60, #11172c);
-  box-shadow: 0 0 45px #008cff55;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 90px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 25px;
-  border-radius: 30px;
-  background: linear-gradient(90deg, #0066ff, #00b7ff);
-  color: white;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: .3s;
-  margin: 5px;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 25px #008cff77;
-}
-
-.btn-outline {
-  background: transparent;
-  border: 1px solid var(--blue);
-}
-
-section {
-  padding: 75px 20px;
-}
-
-.container {
-  max-width: 1100px;
-  margin: auto;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 15px;
-}
-
-.section-title span {
-  color: var(--blue);
-}
-
-.section-subtitle {
-  text-align: center;
-  color: var(--gray);
-  margin-bottom: 45px;
-}
-
-.about-box {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 35px;
-  align-items: center;
-  background: var(--card);
-  padding: 35px;
-  border-radius: 20px;
-  border: 1px solid #123c76;
-}
-
-.about-box h3 {
-  font-size: 28px;
-  margin-bottom: 15px;
-}
-
-.about-box p {
-  color: var(--gray);
-}
-
-.skills {
-  margin-top: 20px;
-}
-
-.skill {
-  margin: 15px 0;
-}
-
-.skill-label {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 6px;
-}
-
-.skill-bar {
-  height: 8px;
-  background: #1d2a44;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.skill-progress {
-  height: 100%;
-  background: linear-gradient(90deg, #0066ff, #00d4ff);
-  border-radius: 20px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 22px;
-}
-
-.card {
-  background: var(--card);
-  border: 1px solid #17365d;
-  border-radius: 16px;
-  padding: 30px 22px;
-  text-align: center;
-  transition: .3s;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  border-color: var(--blue);
-  box-shadow: 0 0 25px #008cff22;
-}
-
-.card-icon {
-  font-size: 42px;
-  margin-bottom: 12px;
-}
-
-.card h3 {
-  margin-bottom: 12px;
-}
-
-.card p {
-  color: var(--gray);
-  font-size: 14px;
-}
-
-.portfolio-card {
-  min-height: 180px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: linear-gradient(135deg, #102754, #12132c);
-}
-
-.contact-box {
-  background: var(--card);
-  border: 1px solid #17365d;
-  padding: 35px;
-  border-radius: 20px;
-  text-align: center;
-}
-
-.contact-box p {
-  color: var(--gray);
-  margin-bottom: 20px;
-}
-
-.socials {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 25px;
-}
-
-.socials a {
-  padding: 10px 18px;
-  border: 1px solid #23466f;
-  border-radius: 25px;
-  color: var(--gray);
-  transition: .3s;
-}
-
-.socials a:hover {
-  color: var(--blue);
-  border-color: var(--blue);
-}
-
-footer {
-  text-align: center;
-  padding: 25px;
-  border-top: 1px solid #17365d;
-  color: var(--gray);
-  font-size: 14px;
-}
-
-footer span {
-  color: var(--blue);
-}
-
-@media(max-width: 700px) {
-  nav {
-    justify-content: center;
-  }
-
-  .nav-links {
-    justify-content: center;
-    gap: 12px;
-  }
-
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 65px 20px;
-  }
-
-  .hero p {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .profile-placeholder {
-    width: 220px;
-    height: 220px;
-    font-size: 70px;
-  }
-
-  .about-box {
-    grid-template-columns: 1fr;
-    padding: 25px;
-  }
-
-  .section-title {
-    font-size: 29px;
-  }
+footer{
+ padding:25px;
+ background:#111a30;
+ color:#bbb;
 }
 </style>
 </head>
-
 <body>
 
-<!-- NAVIGATION -->
 <header>
-<nav>
-  <a href="#home" class="logo">
-    👑 Waseem <span>Brand</span>
-  </a>
-
-  <div class="nav-links">
-    <a href="#home">Home</a>
-    <a href="#about">About Me</a>
-    <a href="#services">Services</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+<h1>🌍 Mera World</h1>
+<p>Your World of AI Editing Services</p>
 </header>
 
-<!-- HOME -->
-<section class="hero" id="home">
+<nav>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#order">Order</a>
+</nav>
 
-  <div class="hero-text">
-    <h1>
-      Welcome to<br>
-      <span>Waseem Brand</span>
-    </h1>
-
-    <p>
-      My Personal Website is Now Online!
-      I am passionate about technology,
-      creativity and digital innovation.
-      Explore my world and discover more.
-    </p>
-
-    <a href="#about" class="btn">Get Started →</a>
-    <a href="#contact" class="btn btn-outline">Contact Me</a>
-  </div>
-
-  <div class="hero-image">
-    <!-- Replace this emoji with your own photo -->
-    <div class="profile-placeholder">👨‍💻</div>
-  </div>
-
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-<div class="container">
-
-  <h2 class="section-title">
-    About <span>Me</span>
-  </h2>
-
-  <p class="section-subtitle">
-    Get to know me better
-  </p>
-
-  <div class="about-box">
-
-    <div>
-      <h3>Hello! I'm <span class="blue">Waseem</span></h3>
-
-      <p>
-        Welcome to my personal website.
-        I am interested in technology, web development,
-        AI tools and digital creativity.
-        I love learning new skills and exploring
-        the world of technology.
-      </p>
-
-      <br>
-
-      <p>
-        This website is my personal space where
-        I share my interests, services and projects.
-      </p>
-    </div>
-
-    <div class="skills">
-
-      <div class="skill">
-        <div class="skill-label">
-          <span>Web Development</span>
-          <span>80%</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-progress" style="width:80%"></div>
-        </div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-label">
-          <span>AI Tools</span>
-          <span>85%</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-progress" style="width:85%"></div>
-        </div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-label">
-          <span>Creative Editing</span>
-          <span>75%</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-progress" style="width:75%"></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
+<div class="hero" id="home">
+<h2>Welcome to Mera World</h2>
+<p>
+اپنی تصاویر اور ویڈیوز کو AI کی مدد سے خوبصورت بنائیں۔
+ہماری سروسز استعمال کریں اور اپنی پسند کی ایڈیٹنگ کروائیں۔
+</p>
+<a class="btn" href="#services">Explore Services</a>
 </div>
-</section>
 
-<!-- SERVICES -->
 <section id="services">
-<div class="container">
+<h2>Our Services</h2>
+<div class="services">
 
-  <h2 class="section-title">
-    My <span>Services</span>
-  </h2>
+<div class="card">
+<div class="emoji">📸</div>
+<h3>AI Photo Editing</h3>
+<p>تصاویر کو خوبصورت اور پروفیشنل بنوائیں۔</p>
+<a class="btn" href="#order">Order Now</a>
+</div>
 
-  <p class="section-subtitle">
-    Explore my digital interests and services
-  </p>
+<div class="card">
+<div class="emoji">🎬</div>
+<h3>AI Video Editing</h3>
+<p>اپنی ویڈیوز کو زبردست اور شاندار بنوائیں۔</p>
+<a class="btn" href="#order">Order Now</a>
+</div>
 
-  <div class="cards">
+<div class="card">
+<div class="emoji">✨</div>
+<h3>Background Editing</h3>
+<p>تصاویر کا بیک گراؤنڈ تبدیل کروائیں۔</p>
+<a class="btn" href="#order">Order Now</a>
+</div>
 
-    <div class="card">
-      <div class="card-icon">💻</div>
-      <h3>Web Development</h3>
-      <p>
-        Modern, responsive and beautiful
-        personal websites.
-      </p>
-    </div>
+<div class="card">
+<div class="emoji">🎨</div>
+<h3>Logo Design</h3>
+<p>اپنے کاروبار کے لیے خوبصورت لوگو بنوائیں۔</p>
+<a class="btn" href="#order">Order Now</a>
+</div>
 
-    <div class="card">
-      <div class="card-icon">🎨</div>
-      <h3>AI Photo Editing</h3>
-      <p>
-        Creative photo editing and
-        AI-powered image enhancement.
-      </p>
-    </div>
+<div class="card">
+<div class="emoji">🤖</div>
+<h3>AI Image Creation</h3>
+<p>اپنے آئیڈیاز سے نئی AI تصاویر بنوائیں۔</p>
+<a class="btn" href="#order">Order Now</a>
+</div>
 
-    <div class="card">
-      <div class="card-icon">🎬</div>
-      <h3>AI Video Editing</h3>
-      <p>
-        Creative video editing,
-        effects and digital content.
-      </p>
-    </div>
+<div class="card">
+<div class="emoji">💎</div>
+<h3>All Other Editing</h3>
+<p>ہر قسم کی دوسری ایڈیٹنگ سروسز۔</p>
+<a class="btn" href="#order">Order Now</a>
+</div>
 
-    <div class="card">
-      <div class="card-icon">🚀</div>
-      <h3>Digital Creativity</h3>
-      <p>
-        Exploring new technologies,
-        AI tools and creative ideas.
-      </p>
-    </div>
-
-  </div>
 </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section id="portfolio">
-<div class="container">
-
-  <h2 class="section-title">
-    My <span>Portfolio</span>
-  </h2>
-
-  <p class="section-subtitle">
-    Some of my interests and projects
-  </p>
-
-  <div class="cards">
-
-    <div class="card portfolio-card">
-      <div class="card-icon">🌐</div>
-      <h3>Personal Website</h3>
-      <p>My own website on GitHub Pages</p>
-    </div>
-
-    <div class="card portfolio-card">
-      <div class="card-icon">🤖</div>
-      <h3>AI Chatbot</h3>
-      <p>Exploring AI-powered applications</p>
-    </div>
-
-    <div class="card portfolio-card">
-      <div class="card-icon">📱</div>
-      <h3>Mobile Apps</h3>
-      <p>Learning mobile application development</p>
-    </div>
-
-  </div>
-</div>
+<section id="order">
+<h2>Place Your Order</h2>
+<form id="orderForm">
+<input id="name" type="text" placeholder="Your Name" required>
+<input id="email" type="email" placeholder="Your Email" required>
+<select id="service" required>
+<option value="">Select a Service</option>
+<option>AI Photo Editing</option>
+<option>AI Video Editing</option>
+<option>Background Editing</option>
+<option>Logo Design</option>
+<option>AI Image Creation</option>
+<option>Other Editing</option>
+</select>
+<textarea id="details" placeholder="Describe your editing requirements" required></textarea>
+<button type="submit">Submit Order</button>
+</form>
+<p id="message"></p>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-<div class="container">
-
-  <h2 class="section-title">
-    Contact <span>Me</span>
-  </h2>
-
-  <p class="section-subtitle">
-    Have a question? Feel free to contact me!
-  </p>
-
-  <div class="contact-box">
-
-    <h3>Let's Connect!</h3>
-
-    <p>
-      Thank you for visiting my personal website.
-      You can connect with me through your social
-      media profiles.
-    </p>
-
-    <div class="socials">
-      <!-- Add your real social media links here -->
-      <a href="#" onclick="return false">📸 Instagram</a>
-      <a href="#" onclick="return false">▶ YouTube</a>
-      <a href="#" onclick="return false">📘 Facebook</a>
-      <a href="#" onclick="return false">✈ Telegram</a>
-    </div>
-
-  </div>
-</div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  <p>
-    © <span id="year"></span>
-    <span>Waseem Brand</span>.
-    All Rights Reserved.
-  </p>
-
-  <p>Made with ❤️ by Waseem</p>
+<h3>🌍 Mera World</h3>
+<p>Thank you for visiting our website!</p>
+<p>© 2026 Mera World. All Rights Reserved.</p>
 </footer>
 
 <script>
-document.getElementById("year").textContent =
-  new Date().getFullYear();
+document.getElementById("orderForm").addEventListener("submit",function(e){
+e.preventDefault();
+const order =
+"Name: "+document.getElementById("name").value+
+"\nEmail: "+document.getElementById("email").value+
+"\nService: "+document.getElementById("service").value+
+"\nDetails: "+document.getElementById("details").value;
+if(navigator.clipboard && navigator.clipboard.writeText){
+navigator.clipboard.writeText(order).then(()=>{
+document.getElementById("message").innerText=
+"Your order details have been copied. Please send them to the website owner.";
+}).catch(()=>{
+document.getElementById("message").innerText=
+"Please copy your order details manually.";
+});
+}else{
+document.getElementById("message").innerText=
+"Your order form is ready. Please contact the website owner.";
+}
+});
 </script>
 
 </body>
