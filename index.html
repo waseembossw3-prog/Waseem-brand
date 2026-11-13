@@ -4,295 +4,261 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mera World | AI Editing Studio</title>
+<title>Mera World AI Studio</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{box-sizing:border-box}
 body{
+ margin:0;
  font-family:Arial,sans-serif;
- background:#080d19;color:white;
+ background:#090d1b;
+ color:white;
 }
 header{
- padding:20px 7%;display:flex;
- justify-content:space-between;align-items:center;
- background:#10182a;border-bottom:1px solid #26334c;
- position:sticky;top:0;z-index:5;
+ padding:22px;
+ text-align:center;
+ background:#111a30;
+ border-bottom:1px solid #283452;
 }
-.logo{font-size:25px;font-weight:bold;color:#48d9ff}
-.logo span{color:#a78bfa}
-button{
- border:0;padding:12px 19px;border-radius:9px;
- background:linear-gradient(100deg,#08b9e9,#8064ff);
- color:white;font-weight:bold;cursor:pointer;
+header h1{
+ color:#a78bfa;
+ margin:5px;
+ font-size:30px;
 }
-button:hover{opacity:.85}
-input,select{
- padding:12px;border-radius:8px;
- border:1px solid #35445e;background:#10182a;
- color:white;width:100%;margin:7px 0;
+header p{color:#b9c3d8}
+.container{
+ max-width:950px;
+ margin:30px auto;
+ padding:15px;
 }
-#auth{
- min-height:85vh;display:flex;justify-content:center;
- align-items:center;padding:20px;
-}
-.authbox{
- width:100%;max-width:390px;background:#121d32;
- padding:30px;border-radius:18px;
- border:1px solid #33425d;text-align:center;
-}
-.authbox h1{margin-bottom:10px;color:#51d9ff}
-.authbox p{color:#aab8cf;margin-bottom:18px}
-#app{display:none}
-.hero{
- text-align:center;padding:65px 20px 45px;
- background:radial-gradient(ellipse at top,#19335c,#080d19 75%);
-}
-.hero h1{font-size:clamp(30px,6vw,52px);margin-bottom:15px}
-.hero h1 span{color:#53d9ff}
-.hero p{color:#b3c1d7;line-height:1.8}
-.container{max-width:1150px;margin:auto;padding:25px 18px}
-.section-title{margin:25px 0 18px;font-size:25px}
-.cards{
- display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));
- gap:15px;
+.hero{text-align:center;margin-bottom:30px}
+.hero h2{font-size:28px}
+.hero p{color:#aebbd1}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:16px;
 }
 .card{
- background:#121d32;border:1px solid #293a56;
- padding:22px 15px;border-radius:14px;
- transition:.2s;
+ background:#151e34;
+ padding:22px;
+ border:1px solid #34405e;
+ border-radius:16px;
+ text-align:center;
 }
-.card:hover{transform:translateY(-4px);border-color:#46d7ff}
-.card .emoji{font-size:32px;margin-bottom:13px}
-.card h3{font-size:16px;margin-bottom:8px}
-.card p{font-size:13px;color:#aab8cf;line-height:1.5}
-.editor{
- background:#121d32;border:1px solid #293a56;
- padding:20px;border-radius:15px;margin-top:20px;
+.card h3{color:#c4b5fd}
+.card button,.mainbtn{
+ background:linear-gradient(90deg,#7c3aed,#2563eb);
+ border:0;
+ padding:12px 20px;
+ border-radius:9px;
+ color:white;
+ font-weight:bold;
+ cursor:pointer;
 }
-.editor h2{margin-bottom:15px}
-.preview{
- min-height:170px;background:#080d19;border-radius:12px;
- display:flex;align-items:center;justify-content:center;
- margin:15px 0;overflow:hidden;padding:10px;
+.workspace{
+ margin-top:25px;
+ background:#151e34;
+ border-radius:16px;
+ padding:22px;
 }
-#photoPreview{max-width:100%;max-height:420px;display:none}
-#videoPreview{max-width:100%;max-height:350px;display:none}
-.tools{
- display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
- gap:12px;margin:15px 0;
+input,select,textarea{
+ width:100%;
+ padding:13px;
+ margin:10px 0;
+ background:#0c1428;
+ color:white;
+ border:1px solid #34405e;
+ border-radius:9px;
 }
-.tool label{font-size:13px;color:#c6d2e5}
-input[type=range]{accent-color:#36cfff;padding:0}
-.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:15px}
-hr{border:0;border-top:1px solid #293a56;margin:25px 0}
-footer{text-align:center;padding:30px;color:#9aabc5}
-.note{font-size:12px;color:#aab8cf;line-height:1.6;margin-top:12px}
+textarea{height:100px}
+#preview{
+ max-width:100%;
+ max-height:300px;
+ display:none;
+ margin:15px auto;
+ border-radius:12px;
+}
+#status{
+ color:#c4b5fd;
+ margin-top:15px;
+ text-align:center;
+}
+footer{
+ text-align:center;
+ color:#9ca3af;
+ padding:30px;
+}
 </style>
 </head>
+
 <body>
 
 <header>
- <div class="logo">MERA <span>WORLD</span></div>
- <button onclick="logout()">Logout</button>
+<h1>✨ MERA WORLD AI</h1>
+<p>Your All-in-One AI Creative Studio</p>
 </header>
 
-<section id="auth">
- <div class="authbox">
-  <h1>MERA WORLD</h1>
-  <p>Welcome to your AI Editing Studio</p>
-  <input id="username" placeholder="Username">
-  <input id="password" type="password" placeholder="Password">
-  <button onclick="signup()">Create Account</button>
-  <button onclick="login()" style="margin-left:5px">Login</button>
-  <p id="message" style="margin-top:15px"></p>
-  <p class="note">Demo account system: credentials are stored only in this browser. Do not use a real or reused password.</p>
- </div>
-</section>
+<div class="container">
 
-<div id="app">
- <section class="hero">
-  <h1>Your Creative World of <span>AI Editing</span></h1>
-  <p>Edit Photos, Videos, Portraits and Creative Projects<br>
-  All your editing tools in one place.</p>
-  <br>
-  <button onclick="document.getElementById('photoEditor').scrollIntoView()">Start Editing</button>
- </section>
+<div class="hero">
+<h2>Welcome to AI Studio</h2>
+<p>Create, Edit and Transform with Artificial Intelligence.</p>
+</div>
 
- <main class="container">
-  <h2 class="section-title">✦ AI Creative Services</h2>
-  <div class="cards">
-   <div class="card"><div class="emoji">📸</div><h3>Photo Editing</h3><p>Upload and enhance your photos.</p></div>
-   <div class="card"><div class="emoji">🎬</div><h3>Video Editing</h3><p>Preview videos and apply effects.</p></div>
-   <div class="card"><div class="emoji">✨</div><h3>AI Enhancer</h3><p>AI image enhancement integration.</p></div>
-   <div class="card"><div class="emoji">🌄</div><h3>Background Remover</h3><p>AI background removal integration.</p></div>
-   <div class="card"><div class="emoji">👤</div><h3>AI Portrait</h3><p>Creative portrait editing.</p></div>
-   <div class="card"><div class="emoji">🎨</div><h3>AI Art</h3><p>AI image generation integration.</p></div>
-   <div class="card"><div class="emoji">🪄</div><h3>Object Remover</h3><p>AI object removal integration.</p></div>
-   <div class="card"><div class="emoji">📱</div><h3>Social Media</h3><p>Creative content editing.</p></div>
-  </div>
+<div class="grid">
 
-  <hr>
-  <section id="photoEditor">
-   <h2 class="section-title">📸 Professional Photo Editor</h2>
-   <div class="editor">
-    <h2>Upload Your Photo</h2>
-    <input type="file" id="photoInput" accept="image/*">
-    <div class="preview">
-     <p id="photoMessage">Your photo preview will appear here</p>
-     <img id="photoPreview" alt="Photo preview">
-    </div>
-    <div class="tools">
-     <div class="tool"><label>Brightness</label><input type="range" id="brightness" min="0" max="200" value="100"></div>
-     <div class="tool"><label>Contrast</label><input type="range" id="contrast" min="0" max="200" value="100"></div>
-     <div class="tool"><label>Saturation</label><input type="range" id="saturation" min="0" max="200" value="100"></div>
-     <div class="tool"><label>Grayscale</label><input type="range" id="grayscale" min="0" max="100" value="0"></div>
-     <div class="tool"><label>Blur</label><input type="range" id="blur" min="0" max="10" value="0"></div>
-    </div>
-    <div class="actions">
-     <button onclick="rotatePhoto()">↻ Rotate</button>
-     <button onclick="resetPhoto()">Reset</button>
-     <button onclick="downloadPhoto()">Download Photo</button>
-    </div>
-   </div>
-  </section>
+<div class="card">
+<h3>📸 AI Photo Editor</h3>
+<p>Edit and enhance your photos.</p>
+<button onclick="choose('Photo Editing')">Open Tool</button>
+</div>
 
-  <hr>
-  <section id="videoEditor">
-   <h2 class="section-title">🎬 Video Editor</h2>
-   <div class="editor">
-    <h2>Upload Your Video</h2>
-    <input type="file" id="videoInput" accept="video/*">
-    <div class="preview">
-     <p id="videoMessage">Your video preview will appear here</p>
-     <video id="videoPreview" controls></video>
-    </div>
-    <label>Video Brightness</label>
-    <input type="range" id="videoBrightness" min="50" max="200" value="100">
-    <label>Video Contrast</label>
-    <input type="range" id="videoContrast" min="50" max="200" value="100">
-    <p class="note">یہاں ویڈیو کا پری ویو اور فلٹر کام کرتے ہیں۔ ویڈیو فائل میں مستقل تبدیلی اور ڈاؤن لوڈ کے لیے ویڈیو ایکسپورٹ سسٹم الگ سے جوڑنا ہوگا۔</p>
-   </div>
-  </section>
+<div class="card">
+<h3>🎬 AI Video Editor</h3>
+<p>AI-powered video editing.</p>
+<button onclick="choose('Video Editing')">Open Tool</button>
+</div>
 
-  <hr>
-  <h2 class="section-title">🚀 More AI Services</h2>
-  <div class="cards">
-   <div class="card"><div class="emoji">💎</div><h3>HD Image Upscale</h3><p>AI service integration required.</p></div>
-   <div class="card"><div class="emoji">🖼️</div><h3>Photo Restoration</h3><p>AI service integration required.</p></div>
-   <div class="card"><div class="emoji">🎞️</div><h3>Video Effects</h3><p>Advanced editing integration.</p></div>
-   <div class="card"><div class="emoji">🤖</div><h3>AI Assistant</h3><p>Connect an AI API to activate.</p></div>
-  </div>
- </main>
+<div class="card">
+<h3>🎨 AI Image Generator</h3>
+<p>Generate images from text.</p>
+<button onclick="choose('Image Generation')">Open Tool</button>
+</div>
+
+<div class="card">
+<h3>🎙️ AI Voice Studio</h3>
+<p>Create AI voiceovers.</p>
+<button onclick="choose('Voice Generation')">Open Tool</button>
+</div>
+
+<div class="card">
+<h3>✂️ Background Remover</h3>
+<p>Remove image backgrounds.</p>
+<button onclick="choose('Background Removal')">Open Tool</button>
+</div>
+
+<div class="card">
+<h3>🤖 AI Assistant</h3>
+<p>Ask anything with AI.</p>
+<button onclick="choose('AI Assistant')">Open Tool</button>
+</div>
+
+</div>
+
+<div class="workspace">
+<h2>🚀 AI Workspace</h2>
+
+<label>Select AI Service</label>
+<select id="service">
+<option>Photo Editing</option>
+<option>Video Editing</option>
+<option>Image Generation</option>
+<option>Voice Generation</option>
+<option>Background Removal</option>
+<option>AI Assistant</option>
+</select>
+
+<label>Upload Your File (if required)</label>
+<input type="file" id="file" accept="image/*,video/*,audio/*">
+
+<img id="preview">
+
+<label>Describe What You Want</label>
+<textarea id="prompt"
+placeholder="Describe your editing or AI task..."></textarea>
+
+<button class="mainbtn" onclick="runAI()">
+✨ Generate with AI
+</button>
+
+<div id="status"></div>
+<div id="result"></div>
+
+</div>
 </div>
 
 <footer>
- <h3>MERA WORLD</h3>
- <p>Creative Editing Studio | All Rights Reserved</p>
- <p>© 2026 Mera World</p>
+© 2026 Mera World AI Studio
+<br>All Rights Reserved
 </footer>
 
 <script>
-// DEMO LOGIN - browser only, not secure production authentication
-function signup(){
- const u=document.getElementById('username').value.trim();
- const p=document.getElementById('password').value;
- if(!u||p.length<6){
-  message("Enter username and a password of at least 6 characters.");
-  return;
- }
- if(localStorage.getItem('mw_user')){
-  message("An account already exists in this browser. Please login.");
-  return;
- }
- localStorage.setItem('mw_user',u);
- localStorage.setItem('mw_pass',p);
- message("Account created! Please login.");
-}
-function login(){
- const u=document.getElementById('username').value.trim();
- const p=document.getElementById('password').value;
- if(u===localStorage.getItem('mw_user') &&
- p===localStorage.getItem('mw_pass')){
-  sessionStorage.setItem('mw_logged','yes');
-  showApp();
- }else message("Incorrect username or password.");
-}
-function message(t){document.getElementById('message').textContent=t}
-function showApp(){
- document.getElementById('auth').style.display='none';
- document.getElementById('app').style.display='block';
-}
-function logout(){
- sessionStorage.removeItem('mw_logged');
- document.getElementById('app').style.display='none';
- document.getElementById('auth').style.display='flex';
-}
-if(sessionStorage.getItem('mw_logged')==='yes')showApp();
-
-// PHOTO EDITOR
-const photoInput=document.getElementById('photoInput');
-const photo=document.getElementById('photoPreview');
-let photoURL=null,rotation=0;
-photoInput.addEventListener('change',e=>{
- const f=e.target.files[0];
- if(!f)return;
- if(photoURL)URL.revokeObjectURL(photoURL);
- photoURL=URL.createObjectURL(f);
- photo.src=photoURL;
- photo.style.display='block';
- document.getElementById('photoMessage').style.display='none';
- rotation=0;
- resetPhoto();
-});
-function applyPhoto(){
- photo.style.filter=
- `brightness(${brightness.value}%) contrast(${contrast.value}%) saturate(${saturation.value}%) grayscale(${grayscale.value}%) blur(${blur.value}px)`;
- photo.style.transform=`rotate(${rotation}deg)`;
-}
-['brightness','contrast','saturation','grayscale','blur'].forEach(id=>{
- document.getElementById(id).addEventListener('input',applyPhoto);
-});
-function rotatePhoto(){rotation=(rotation+90)%360;applyPhoto()}
-function resetPhoto(){
- brightness.value=100;contrast.value=100;
- saturation.value=100;grayscale.value=0;blur.value=0;
- applyPhoto();
-}
-function downloadPhoto(){
- if(!photoURL){alert('Please upload a photo first.');return}
- const img=new Image();
- img.onload=()=>{
-  const c=document.createElement('canvas');
-  const ctx=c.getContext('2d');
-  const w=img.naturalWidth,h=img.naturalHeight;
-  c.width=(rotation%180===0)?w:h;
-  c.height=(rotation%180===0)?h:w;
-  ctx.translate(c.width/2,c.height/2);
-  ctx.rotate(rotation*Math.PI/180);
-  ctx.filter=photo.style.filter;
-  ctx.drawImage(img,-w/2,-h/2,w,h);
-  const a=document.createElement('a');
-  a.download='Mera-World-Edited.png';
-  a.href=c.toDataURL('image/png');
-  a.click();
- };
- img.src=photoURL;
+function choose(name){
+ document.getElementById("service").value=name;
+ document.querySelector(".workspace").scrollIntoView({
+ behavior:"smooth"
+ });
 }
 
-// VIDEO PREVIEW
-const video=document.getElementById('videoPreview');
-document.getElementById('videoInput').addEventListener('change',e=>{
- const f=e.target.files[0];
- if(!f)return;
- video.src=URL.createObjectURL(f);
- video.style.display='block';
- document.getElementById('videoMessage').style.display='none';
+const fileInput=document.getElementById("file");
+
+fileInput.addEventListener("change",function(){
+ const file=this.files[0];
+ if(file && file.type.startsWith("image/")){
+  const preview=document.getElementById("preview");
+  preview.src=URL.createObjectURL(file);
+  preview.style.display="block";
+ }
 });
-function applyVideo(){
- video.style.filter=
- `brightness(${videoBrightness.value}%) contrast(${videoContrast.value}%)`;
+
+async function runAI(){
+
+ const status=document.getElementById("status");
+ const result=document.getElementById("result");
+
+ const service=document.getElementById("service").value;
+ const prompt=document.getElementById("prompt").value;
+ const file=fileInput.files[0];
+
+ status.textContent="Connecting to AI service...";
+ result.innerHTML="";
+
+ try{
+  const data=new FormData();
+  data.append("service",service);
+  data.append("prompt",prompt);
+
+  if(file)data.append("file",file);
+
+  const response=await fetch("/api/ai",{
+   method:"POST",
+   body:data
+  });
+
+  if(!response.ok){
+   throw new Error("AI service is not connected yet.");
+  }
+
+  const output=await response.json();
+
+  status.textContent="AI task completed!";
+
+  if(output.image){
+   const img=document.createElement("img");
+   img.src=output.image;
+   img.style.maxWidth="100%";
+   result.appendChild(img);
+  }
+
+  if(output.text){
+   result.textContent=output.text;
+  }
+
+  if(output.video){
+   const video=document.createElement("video");
+   video.src=output.video;
+   video.controls=true;
+   video.style.width="100%";
+   result.appendChild(video);
+  }
+
+ }catch(error){
+  status.textContent=
+   "AI engine ابھی منسلک نہیں ہے۔ Backend اور AI API کی ضرورت ہے۔";
+ }
 }
-videoBrightness.addEventListener('input',applyVideo);
-videoContrast.addEventListener('input',applyVideo);
 </script>
+
 </body>
 </html>
